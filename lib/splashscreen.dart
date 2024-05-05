@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:bmicalculator/homepage.dart';
+import 'package:bmicalculator/pages/homepage.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

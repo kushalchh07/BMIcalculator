@@ -1,4 +1,3 @@
-import 'package:bmicalculator/homepage.dart';
 import 'package:bmicalculator/splashscreen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromARGB(255, 33, 190, 161)),
         useMaterial3: true,
       ),
       home: SplashScreen(),

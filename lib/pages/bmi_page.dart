@@ -1,20 +1,22 @@
-import 'dart:js';
+import 'package:bmicalculator/pages/about_page.dart';
+import 'package:bmicalculator/pages/calorie_calculate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage({super.key});
+class BmiPage extends StatefulWidget {
+
+  BmiPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<BmiPage> createState() => _BmiPageState();
 }
 
-var wtController = TextEditingController();
-var ftController = TextEditingController();
-var inController = TextEditingController();
-
-class _HomePageState extends State<HomePage> {
+class _BmiPageState extends State<BmiPage> {
+  
+  var wtController = TextEditingController();
+  var ftController = TextEditingController();
+  var inController = TextEditingController();
   var result = "";
   var description = "";
   var bgcolor = Colors.purple[100];
@@ -63,19 +65,16 @@ class _HomePageState extends State<HomePage> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(
+       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 33, 190, 161),
         title: Text(
-          "BMI Calculator",
+          "BMI calculator",
           style: GoogleFonts.cabin(
             fontWeight: FontWeight.w700,
             fontSize: 35,
             color: Colors.white,
           ),
         ),
-        // centerTitle: true,
-        // shadowColor: Colors.black,
-        // elevation: 15,
       ),
       body: Container(
         color: Colors.grey[100],
@@ -246,7 +245,7 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Text(
                                 "Description",
-                                style: GoogleFonts.cabin(),
+                                style: GoogleFonts.cabin(fontSize: 20),
                               ),
                               Divider(
                                 thickness: 1,
