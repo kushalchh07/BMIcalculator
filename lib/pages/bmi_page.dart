@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class BmiPage extends StatefulWidget {
-
   BmiPage({super.key});
 
   @override
@@ -13,7 +12,6 @@ class BmiPage extends StatefulWidget {
 }
 
 class _BmiPageState extends State<BmiPage> {
-  
   var wtController = TextEditingController();
   var ftController = TextEditingController();
   var inController = TextEditingController();
@@ -65,7 +63,7 @@ class _BmiPageState extends State<BmiPage> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-       appBar: AppBar(
+      appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 33, 190, 161),
         title: Text(
           "BMI calculator",
@@ -131,7 +129,7 @@ class _BmiPageState extends State<BmiPage> {
                           controller: wtController,
                           decoration: InputDecoration(
                               label: Text(
-                                "Enter Your Weights (In kgs):",
+                                "Weights (In kgs):",
                                 style: GoogleFonts.cabin(
                                     fontWeight: FontWeight.w100,
                                     color: Colors.grey.shade900),
@@ -145,7 +143,7 @@ class _BmiPageState extends State<BmiPage> {
                         TextField(
                           controller: ftController,
                           decoration: InputDecoration(
-                              label: Text("Enter Your Height (In ft):",
+                              label: Text("Height (In ft):",
                                   style: GoogleFonts.cabin(
                                       fontWeight: FontWeight.w100,
                                       color: Colors.grey.shade900)),
@@ -158,7 +156,7 @@ class _BmiPageState extends State<BmiPage> {
                         TextField(
                           controller: inController,
                           decoration: InputDecoration(
-                              label: Text("Enter Your Height (In Inch):",
+                              label: Text("Height (In Inch):",
                                   style: GoogleFonts.cabin(
                                       fontWeight: FontWeight.w100,
                                       color: Colors.grey.shade900)),

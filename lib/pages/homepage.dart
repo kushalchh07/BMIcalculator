@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                   });
                 },
                 icon: Icon(
-                  Icons.home,
+                  Icons.accessibility,
                   color: Colors.white,
                   size: 35,
                 )),
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                   });
                 },
                 icon: Icon(
-                  Icons.abc,
+                  Icons.fitness_center,
                   color: Colors.white,
                   size: 35,
                 )),
@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                   });
                 },
                 icon: Icon(
-                  Icons.abc_outlined,
+                  Icons.info_outline,
                   color: Colors.white,
                   size: 35,
                 )),

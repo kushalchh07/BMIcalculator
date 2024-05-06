@@ -12,12 +12,50 @@ class _CalorieCalculateState extends State<CalorieCalculate> {
   var wtController = TextEditingController();
   var ageController = TextEditingController();
   var cmController = TextEditingController();
-  var result = "";
+  var bmr;
   var description = "";
 
-  void _onpressed() {}
-  String _selectedOption = 'Option 1';
-  String _choice = 'No Exercise';
+  var _selectedOption = 'Option 1';
+  var _choice = 'No Exercise';
+
+  void _onpressed() {
+    var wt = wtController.text.toString();
+    var age = ageController.text.toString();
+    var cm = cmController.text.toString();
+
+    if (wt != "" && age != "" && cm != "") {
+      var twt = int.parse(wt); //parsed into integer
+      var tage = int.parse(age); //parsed into integer
+      var tcm = int.parse(cm);
+
+      setState(() {
+        if (_selectedOption == 'Option 1') {
+          bmr = (10 * twt) + (6.25 * tcm) - (5 * tage) + 5;
+        } else {
+          bmr = (10 * twt) + (6.25 * tcm) - (5 * tage) - 161;
+        }
+
+        if (_choice == 'No Exerxise') {
+          description = (bmr * 1.2).toString();
+        } else if (_choice == 'Light Exercise') {
+          description = (bmr * 1.375).toString();
+        } else if (_choice == 'Moderate Exercise') {
+          description = (bmr * 1.55).toString();
+        } else if (_choice == 'Hard Exercise') {
+          description = (bmr * 1.725).toString();
+        } else {
+          description = (bmr * 1.9).toString();
+        }
+      });
+    }
+    if (wt == "" && age == "" && cm == "") {
+      setState(() {
+        // Show the SnackBar
+        ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("Please fill up all the area.")));
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,9 +85,7 @@ class _CalorieCalculateState extends State<CalorieCalculate> {
               elevation: 10,
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(20),
-                      bottomRight: Radius.circular(20)),
+                  borderRadius: BorderRadius.circular(8),
                   color: Colors.white,
                 ),
                 height: 400,
@@ -118,7 +154,14 @@ class _CalorieCalculateState extends State<CalorieCalculate> {
                           ),
                           keyboardType: TextInputType.number,
                         ),
+                        SizedBox(
+                          height: 15,
+                        ),
                         DropdownButton(
+                            icon: Icon(Icons.arrow_drop_down),
+                            elevation: 8,
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                            dropdownColor: Colors.white,
                             value: _choice,
                             items: <String>[
                               'No Exercise',
@@ -178,7 +221,7 @@ class _CalorieCalculateState extends State<CalorieCalculate> {
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Text(
-                          "Result",
+                          "The amount of Calorioes you need:",
                           style: GoogleFonts.cabin(fontSize: 20),
                         ),
                       ),
@@ -194,18 +237,11 @@ class _CalorieCalculateState extends State<CalorieCalculate> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Description",
-                                style: GoogleFonts.cabin(fontSize: 16),
-                              ),
-                              Divider(
-                                thickness: 1,
-                                color: Colors.black,
-                              ),
-                              Text(
                                 description,
-                                style: GoogleFonts.cabin(fontSize: 20),
+                                style: GoogleFonts.cabin(fontSize: 25),
                               ),
                             ],
                           ),

@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AboutPage extends StatelessWidget {
-  
-   AboutPage({super.key});
+  AboutPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +20,7 @@ class AboutPage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          child: Text("AboutPage."),
+          child: Text("Info will be added soon."),
         ),
       ),
     );
