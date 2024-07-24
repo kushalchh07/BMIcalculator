@@ -190,26 +190,31 @@ class _CalorieCalculateState extends State<CalorieCalculate> {
                   ),
                 ),
               ),
+              // ignore: prefer_const_constructors
               SizedBox(
                 height: 16,
               ),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      backgroundColor: const Color.fromARGB(255, 33, 190, 161),
-                      shape: RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.circular(10), // Button border radius
-                      ),
-                      fixedSize: Size(400, 50) // Text color
-                      ),
-                  onPressed: () {
-                    _onpressed();
-                  },
-                  child: Text(
-                    "CALCULATE",
-                    style: GoogleFonts.cabin(fontSize: 16),
-                  )),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor:
+                            const Color.fromARGB(255, 33, 190, 161),
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(10), // Button border radius
+                        ),
+                        fixedSize: Size(400, 50) // Text color
+                        ),
+                    onPressed: () {
+                      _onpressed();
+                    },
+                    child: Text(
+                      "CALCULATE",
+                      style: GoogleFonts.cabin(fontSize: 16),
+                    )),
+              ),
               SizedBox(
                 height: 11,
               ),

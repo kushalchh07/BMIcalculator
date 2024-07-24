@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:bmicalculator/pages/about_page.dart';
 import 'package:bmicalculator/pages/bmi_page.dart';
 import 'package:bmicalculator/pages/calorie_calculate.dart';
@@ -33,6 +35,7 @@ class _HomePageState extends State<HomePage> {
       body: pages[pageIndex],
       bottomNavigationBar: Container(
         height: 60,
+    
         decoration: BoxDecoration(
           color: Color.fromARGB(255, 33, 190, 161),
           borderRadius: const BorderRadius.only(

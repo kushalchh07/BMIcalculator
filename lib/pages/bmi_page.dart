@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last, prefer_const_constructors
+
 import 'package:bmicalculator/pages/about_page.dart';
 import 'package:bmicalculator/pages/calorie_calculate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -83,88 +85,94 @@ class _BmiPageState extends State<BmiPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                width: 400,
-                height: 60,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    "Lets Calculate Your BMI !!!",
-                    style: GoogleFonts.cabin(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w200,
-                        color: Colors.grey[850]),
-                  ),
-                ),
-                decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(8),
-                        topRight: Radius.circular(8))),
-              ),
-              Material(
-                elevation: 10,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(20),
-                        bottomRight: Radius.circular(20)),
-                    color: Colors.white,
-                  ),
-                  height: 300,
                   width: 400,
+                  height: 60,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Divider(
-                            thickness: 0.5,
-                            color: Colors.black,
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          TextField(
-                            controller: wtController,
-                            decoration: InputDecoration(
-                                label: Text(
-                                  "Weights (In kgs):",
-                                  style: GoogleFonts.cabin(
-                                      fontWeight: FontWeight.w100,
-                                      color: Colors.grey.shade900),
-                                ),
-                                prefixIcon: Icon(Icons.line_weight)),
-                            keyboardType: TextInputType.number,
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          TextField(
-                            controller: ftController,
-                            decoration: InputDecoration(
-                                label: Text("Height (In ft):",
+                    child: Text(
+                      "Lets Calculate Your BMI !!!",
+                      style: GoogleFonts.cabin(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w200,
+                          color: Colors.grey[850]),
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(8),
+                          topRight: Radius.circular(8))),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Material(
+                  elevation: 10,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(20),
+                          bottomRight: Radius.circular(20)),
+                      color: Colors.white,
+                    ),
+                    height: 300,
+                    width: 400,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Divider(
+                              thickness: 0.5,
+                              color: Colors.black,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            TextField(
+                              controller: wtController,
+                              decoration: InputDecoration(
+                                  label: Text(
+                                    "Weights (In kgs):",
                                     style: GoogleFonts.cabin(
                                         fontWeight: FontWeight.w100,
-                                        color: Colors.grey.shade900)),
-                                prefixIcon: Icon(Icons.height)),
-                            keyboardType: TextInputType.number,
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          TextField(
-                            controller: inController,
-                            decoration: InputDecoration(
-                                label: Text("Height (In Inch):",
-                                    style: GoogleFonts.cabin(
-                                        fontWeight: FontWeight.w100,
-                                        color: Colors.grey.shade900)),
-                                prefixIcon: Icon(Icons.height)),
-                            keyboardType: TextInputType.number,
-                          ),
-                        ],
+                                        color: Colors.grey.shade900),
+                                  ),
+                                  prefixIcon: Icon(Icons.line_weight)),
+                              keyboardType: TextInputType.number,
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            TextField(
+                              controller: ftController,
+                              decoration: InputDecoration(
+                                  label: Text("Height (In ft):",
+                                      style: GoogleFonts.cabin(
+                                          fontWeight: FontWeight.w100,
+                                          color: Colors.grey.shade900)),
+                                  prefixIcon: Icon(Icons.height)),
+                              keyboardType: TextInputType.number,
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            TextField(
+                              controller: inController,
+                              decoration: InputDecoration(
+                                  label: Text("Height (In Inch):",
+                                      style: GoogleFonts.cabin(
+                                          fontWeight: FontWeight.w100,
+                                          color: Colors.grey.shade900)),
+                                  prefixIcon: Icon(Icons.height)),
+                              keyboardType: TextInputType.number,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -173,23 +181,27 @@ class _BmiPageState extends State<BmiPage> {
               SizedBox(
                 height: 20,
               ),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      backgroundColor: const Color.fromARGB(255, 33, 190, 161),
-                      shape: RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.circular(10), // Button border radius
-                      ),
-                      fixedSize: Size(400, 50) // Text color
-                      ),
-                  onPressed: () {
-                    _onpressed();
-                  },
-                  child: Text(
-                    "CALCULATE",
-                    style: GoogleFonts.cabin(fontSize: 16),
-                  )),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor:
+                            const Color.fromARGB(255, 33, 190, 161),
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(10), // Button border radius
+                        ),
+                        fixedSize: Size(400, 50) // Text color
+                        ),
+                    onPressed: () {
+                      _onpressed();
+                    },
+                    child: Text(
+                      "CALCULATE",
+                      style: GoogleFonts.cabin(fontSize: 18),
+                    )),
+              ),
               SizedBox(
                 height: 11,
               ),
